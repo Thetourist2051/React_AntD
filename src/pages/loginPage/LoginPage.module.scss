@@ -1,0 +1,26 @@
+.page-content {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: cadetblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Inter", sans-serif !important;
+}
+.login-body {
+  width: 500px;
+  padding: 1.75rem 2.5rem 2.5rem;
+  background-color: white;
+  border-radius: 10px;
+}
+.formItem {
+  width: 100%;
+  padding: 0 0 1.25rem;
+}
+.custom-error{
+    position: absolute;
+    left: 0;
+    bottom: 2px;
+}

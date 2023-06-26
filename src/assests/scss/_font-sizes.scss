@@ -1,0 +1,9 @@
+$font-sizes-range: 10px to 30px;
+@each $font-size in $font-sizes-range {
+    $class-name: f-#{$font-size};
+  
+    .#{$class-name} {
+      font-size: $font-size!important;
+    }
+}
+  
