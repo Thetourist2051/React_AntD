@@ -7,4 +7,5 @@ export const RouteConstants = {
     DefaultPath:'/',
     Dashboard:'/dashboard',
     UserPage:'/user-page',
+    ResigterPage:'/resigtration'
 }

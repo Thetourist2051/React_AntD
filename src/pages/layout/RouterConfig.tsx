@@ -30,6 +30,10 @@ const RouterConfig = () => {
 
   const LayoutLazyComponent = React.lazy(() => import("../layout/Layout"));
 
+  const RegistrationLazyComponent = React.lazy(
+    () => import("../resigtraionPage/ResigtrationPage")
+  );
+
   return (
     <BrowserRouter>
       <Routes>
@@ -70,6 +74,15 @@ const RouterConfig = () => {
         />
 
         <Route
+          path={RouteConstants.ResigterPage}
+          element={
+            <React.Suspense fallback={<>Loading</>}>
+              <RegistrationLazyComponent />
+            </React.Suspense>
+          }
+        />
+
+        <Route
           path={RouteConstants.FileNotFound}
           element={
             <React.Suspense fallback={<>Loading</>}>
@@ -77,7 +90,7 @@ const RouterConfig = () => {
             </React.Suspense>
           }
         />
-        
+
         <Route element={<ProtectedRoute />}>
           <Route
             path={RouteConstants.Dashboard}
@@ -104,7 +117,6 @@ const RouterConfig = () => {
             }
           ></Route>
         </Route>
-        
       </Routes>
     </BrowserRouter>
   );

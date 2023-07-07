@@ -99,15 +99,26 @@ const LoginPage = () => {
             </div>
             <div className="row mx-0 mt-3 justify-content-start">
               <Button
-                size={'large'}
+                size={"large"}
                 type="primary"
                 shape={"round"}
                 className="primary-btn"
                 onClick={formikForm.submitForm}
                 disabled={!formikForm.isValid}
-                color={'info'}
+                color={"info"}
               >
                 Submit
+              </Button>
+              <Button
+                size={"large"}
+                type="primary"
+                shape={"round"}
+                className="success-btn"
+                onClick={() => navigate(RouteConstants.ResigterPage)}
+                disabled={!formikForm.isValid}
+                color={"info"}
+              >
+                Resigter
               </Button>
             </div>
           </form>
