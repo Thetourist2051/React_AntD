@@ -1,10 +1,10 @@
 import React from 'react'
 
-type Props = {}
-
-const DashboardPage = (props: Props) => {
+function DashboardPage() {
   return (
-    <div>DashboardPage</div>
+    <div>
+      Dashboard Page
+    </div>
   )
 }
 
