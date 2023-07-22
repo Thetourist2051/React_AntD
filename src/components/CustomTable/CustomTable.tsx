@@ -27,6 +27,8 @@ type tableProps = {
   downloadFileName?: string;
   headerStyle?: React.CSSProperties | undefined;
   alignItems?: any;
+  otherTableProps?: any;
+  customColumnClassName?: string;
 };
 
 const CustomTable = ({
@@ -37,25 +39,19 @@ const CustomTable = ({
   onRowClick,
   downloadFileName,
   alignItems,
+  otherTableProps,
+  customColumnClassName,
 }: tableProps) => {
   columnArray.forEach((column: any) => {
     column.width = (column && column.width) || 140;
     column.alignItems = (column && column.alignItems) || "left";
   });
-  console.log("columnArray", columnArray);
 
   const exportColumns = columnArray
     .filter((column: any) => column.title !== "Action")
     .map(({ title }: any) => title);
-  console.log("exportColumns", exportColumns);
-
-  const filterKeys = columnArray
-    .filter((column: any) => column.title !== "Action")
-    .map(({ key }: any) => key);
-  console.log("filterKeys", filterKeys);
 
   const exportData = data.map((item) => Object.values(item));
-  console.log("titl", exportColumns, exportData);
 
   const generatePdf = () => {
     const doc = new jsPDF();
@@ -85,10 +81,8 @@ const CustomTable = ({
 
   const generateExcel = () => {
     const worksheet = XLSX.utils.aoa_to_sheet([exportColumns, ...exportData]); // Create a worksheet with the data
-
     const workbook = XLSX.utils.book_new();
     XLSX.utils.book_append_sheet(workbook, worksheet, "Sheet 1"); // Add the worksheet to the workbook
-
     const excelBuffer = XLSX.write(workbook, {
       bookType: "xlsx",
       type: "array",
@@ -105,18 +99,16 @@ const CustomTable = ({
     link.click();
     document.body.removeChild(link);
   };
+
   const [globalFilters, setGlobalFilters] = useState<string>("");
 
   const handleSpeechRecognition = () => {
     const recognition = new (window as any).webkitSpeechRecognition();
-
-    recognition.lang = 'en-US'; // Set the language for recognition (change as needed).
-
+    recognition.lang = "en-US"; // Set the language for recognition (change as needed).
     recognition.onresult = (event: any) => {
       const transcript = event.results[event.results.length - 1][0].transcript;
-      setGlobalFilters(transcript)
+      setGlobalFilters(transcript);
     };
-
     recognition.start();
   };
 
@@ -124,7 +116,6 @@ const CustomTable = ({
     return (
       <>
         <div className="row m-0 justify-content-between table-header">
-          {/* <h6>Table header name</h6> */}
           <div className="table-btns p-0 d-flex w-auto">
             <Tooltip title={"PDF"}>
               <Button
@@ -165,7 +156,6 @@ const CustomTable = ({
                 placeholder="Search here..."
               />
 
-              
               <span
                 className="p-inputgroup-addon cursor-pointer"
                 onClick={() => handleSpeechRecognition()}
@@ -187,17 +177,6 @@ const CustomTable = ({
 
   return (
     <>
-      {/* <Table
-        dataSource={data ? data : []}
-        columns={columnArray}
-        size={size || "small"}
-        bordered={true}
-        loading={loading}
-        scroll={{ y: scrollHeight || "calc(100vh - 192px)" }}
-        title={tableHeader}
-        className="global-table-style"
-      /> */}
-
       <DataTable
         value={data}
         scrollable
@@ -206,11 +185,15 @@ const CustomTable = ({
         size="small"
         stripedRows
         paginator
+        showGridlines
+        columnResizeMode="expand"
+        resizableColumns
         rows={20}
         rowsPerPageOptions={[5, 10, 15, 20, 25, 50]}
         paginatorClassName="custom-paginator"
         header={tableHeader}
         globalFilter={globalFilters}
+        {...otherTableProps}
       >
         {columnArray.map((column: any) => {
           const columnStyle = { textAlign: column.alignItems };
@@ -223,6 +206,12 @@ const CustomTable = ({
               frozen={column?.frozen}
               alignFrozen={column?.alignFrozen}
               body={column?.body}
+              sortable={true}
+              className={
+                customColumnClassName
+                  ? customColumnClassName + "" + "custom-column-class"
+                  : "custom-column-class"
+              }
             />
           );
         })}

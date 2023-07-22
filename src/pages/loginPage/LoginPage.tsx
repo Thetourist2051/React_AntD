@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { RouteConstants } from "../../constants/RouteConstant";
 import { message } from "antd";
 import "./LoginPage";
+import axios from "axios";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -19,19 +20,34 @@ const LoginPage = () => {
     username: "",
     password: "",
   };
-
+  
   const submitLoginForm = (values: any) => {
     console.log("form Values", values);
-    if (values.username === loginValues.username) {
-      console.log("form Submitted");
-      localStorage.setItem("refresh_token", values.username);
-      navigate(RouteConstants.Dashboard);
-      message.success("Login Successful");
-    } else {
-      // navigate(RouteConstants.Login);
-      message.error("Login Error");
-    }
+    localStorage.setItem("login_token", values.username);
+          navigate(RouteConstants.Dashboard);
+
+    const options = {
+      method: 'GET',
+      url: 'http://localhost:3001/login',
+      params: values ,
+      headers: {
+          'content-type': 'application/json',
+      },
   };
+    // if (values.username === loginValues.username) {
+    //   console.log("form Submitted");
+    //   localStorage.setItem("login_token", values.username);
+    //   navigate(RouteConstants.Dashboard);
+    //   message.success("Login Successful");
+    // } else {
+    //   message.error("Login Error");
+    // }
+
+    axios.request(options).then((response:any)=>{
+     console.log('response',response);
+    })
+  };
+
 
   const loginFromValidations = Yup.object({
     username: Yup.string().min(2, "Min len 3").required("Required!"),

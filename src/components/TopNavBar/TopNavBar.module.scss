@@ -1,9 +1,9 @@
 .topNav{
-    height: 55px;
+    height: 50px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--bs-dark-text-emphasis);
+    background-color: var(--primary-600);
 }
 .nav-page-menu-name{
     padding: 0 0rem;
@@ -26,15 +26,16 @@
 .nav-page-name{
    h5{
     margin: 0;
+    font-size: 15px;
    }
 }
 .nav-profile{
-    width: 50px;
+    width: 30px;
     display: flex;
     justify-content: center;
     align-items: center;
     span{
-        font-size: 40px;
+        font-size: 35px;
         font-weight: 200;
         cursor: pointer;
     }

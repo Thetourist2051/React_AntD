@@ -2,25 +2,16 @@
   font-family: Inter, sans-serif;
 }
 
-.global-table-style
-  .ant-table
-  .ant-table-body
-  table
-  .ant-table-row
-  td.ant-table-cell {
-  font-size: 12px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.p-datatable .p-datatable-thead tr th {
-  // padding: 0.5rem 1rem;
-  background-color: #495057 !important;
+.global-table-style.p-datatable .p-datatable-thead tr th {
+  background-color: var(--primary-800) !important;
   color: white !important;
   font-size: 13px;
+  padding: 0.65rem 0.5rem!important;
+  font-weight: 500!important;
 }
 
-.p-datatable .p-datatable-tbody tr td {
+
+.global-table-style.p-datatable .p-datatable-tbody tr td {
   font-size: 12px;
   white-space: nowrap;
   overflow: hidden;
@@ -28,82 +19,110 @@
   padding: 0.25rem 0.5rem!important;
 }
 
-.p-datatable.p-datatable-striped .p-datatable-tbody > tr.p-row-odd {
-  background: rgb(232 232 232) !important;
+.global-table-style.p-datatable.p-datatable-striped .p-datatable-tbody > tr.p-row-odd {
+  // background: rgb(232 232 232) !important;
 }
 .p-datatable .p-paginator-bottom {
   border-width: 1px;
 }
-.p-paginator .p-paginator-first,
-.p-paginator .p-paginator-prev,
-.p-paginator .p-paginator-next,
-.p-paginator .p-paginator-last {
+.global-table-style.p-paginator .p-paginator-first,
+.global-table-style .p-paginator .p-paginator-prev,
+.global-table-style .p-paginator .p-paginator-next,
+.global-table-style .p-paginator .p-paginator-last {
   width: 2rem;
   height: 2rem;
   margin: 0.143rem;
 }
-[data-pc-section="pagebutton"],
-[data-pc-section="nextpagebutton"],
-[data-pc-section="lastpagebutton"],
-[data-pc-section="firstpagebutton"],
-[data-pc-section="prevpagebutton"] {
+.global-table-style [data-pc-section="pagebutton"],
+.global-table-style [data-pc-section="nextpagebutton"],
+.global-table-style [data-pc-section="lastpagebutton"],
+.global-table-style [data-pc-section="firstpagebutton"],
+.global-table-style [data-pc-section="prevpagebutton"] {
   height: 2rem !important;
   max-width: 2rem !important;
   min-width: 2rem !important;
   font-size: 13px !important;
+  border-width: 0!important;
+  border-radius: 5px!important;
+  margin: 0 2px!important;
 }
 
-.custom-paginator .p-dropdown {
+.global-table-style .custom-paginator .p-dropdown {
   height: 2rem !important;
 }
-.custom-paginator .p-dropdown .p-dropdown-label {
+.global-table-style .custom-paginator .p-dropdown .p-dropdown-label {
   font-size: 13px;
-  width: 1.5rem;
+  width: 2rem;
   padding: 5px 8px;
   text-align: center;
 }
-.custom-paginator .p-dropdown .p-dropdown-trigger {
+.global-table-style .custom-paginator .p-dropdown .p-dropdown-trigger {
   width: 1.75rem;
 }
-.custom-paginator .p-dropdown .p-dropdown-trigger svg {
+.global-table-style .custom-paginator .p-dropdown .p-dropdown-trigger svg {
   height: 14px;
   width: 14px;
 }
-.p-dropdown-panel .p-dropdown-items-wrapper .p-dropdown-items .p-dropdown-item {
+.global-table-style .p-dropdown-panel .p-dropdown-items-wrapper .p-dropdown-items .p-dropdown-item {
   text-align: center;
   font-size: 13px;
   padding: 0.75rem;
 }
 
-.pdf-button{
+.global-table-style .pdf-button{
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.header-button{
+.global-table-style .header-button{
     display: flex;
     justify-content: center;
     align-items: center;
     height: 2.5rem!important;
     width: 2.5rem!important;
 }
-.p-inputgroup{
+.global-table-style .p-inputgroup{
     height: 40px;
-    border: 1px solid #dedede;
     border-radius: 5px;
+    border: 1px solid rgba(255,255,255,0.6);
 }
-.p-inputgroup .p-inputgroup-addon{
+.global-table-style .p-inputgroup .p-inputgroup-addon{
     padding: 0.75rem 0.5rem;
     border-width: 0;
 }
-.p-inputgroup .p-inputtext.p-inputtext-sm{
+.global-table-style .p-inputgroup .p-inputtext.p-inputtext-sm{
     border-width: 0;
     padding: 0.75rem 0.5rem;
 }
-.p-inputgroup .p-inputtext:focus{
+.global-table-style .p-inputgroup .p-inputtext:focus{
     border-color: transparent;
 }
-.p-inputtext:enabled:focus{
+.global-table-style .p-inputtext:enabled:focus{
     border-color: transparent!important;
     box-shadow: none!important;
+}
+.custom-column-class .p-sortable-column-icon{
+  height: 12px;
+  width: 12px;
+  color: white!important;
+}
+.custom-column-class .p-column-header-content{
+  justify-content: space-between;
+}
+.p-dropdown-panel .p-dropdown-items-wrapper .p-dropdown-item{
+  font-size: 13px;
+  text-align: center;
+}
+.global-table-style{
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.global-table-style .p-datatable-header{
+  background-color: var(--surface-a)!important;
+  border-radius: 5px 5px 0px 0px;
+}
+.custom-paginator{
+  background: var(--surface-a)!important;
+  border-radius: 0px 0px 5px 5px!important;
 }

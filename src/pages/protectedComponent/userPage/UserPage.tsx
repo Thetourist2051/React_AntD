@@ -89,17 +89,11 @@ const UserPage = (props: any) => {
       title: "Age",
       dataIndex: "age",
       key: "age",
-      sorter: (a: any, b: any) => a.age - b.age,
     },
     {
       title: "Address",
       dataIndex: "address",
       key: "address",
-      render: (address: string) => (
-        <Tooltip placement="topLeft" title={address}>
-          {address}
-        </Tooltip>
-      ),
     },
     {
       title: "College",

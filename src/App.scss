@@ -1,8 +1,30 @@
-@import '../node_modules/antd/dist/reset.css';
-@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-@import '../src/assests/scss/_font-sizes';
-@import '../src/assests/scss/Custom.scss';
+// @import '../node_modules/antd/dist/reset.css';
+// @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../src/assests/scss/_font_variable';
+@import '../src/assests/scss/_position_variable';
 @import "primereact/resources/primereact.min.css";
 @import 'primeicons/primeicons.css';
+@import './assests/scss/animation.scss';
 
 
+.app{
+    font-family: 'Inter', sans-serif!important;
+// font-family: 'Montserrat', sans-serif;
+// font-family: 'Raleway', sans-serif;
+}
+.p-component,.p-paginator-page, .p-dropdown-label{
+    font-family: 'Inter', sans-serif!important;
+}
+.menuPanel{
+    height: 40px;
+    width: 55px;
+    background: var(--primary-500);
+}
+.perfect-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.cursor-pointer{
+    cursor: pointer;
+}

@@ -2,7 +2,8 @@ import React from "react";
 import style from "./SideNavBar.module.scss";
 import { ImageUrl } from "../../constants/ImageUrl";
 import { NavLink, useNavigate } from "react-router-dom";
-import {RightOutlined } from '@ant-design/icons'
+import { RightOutlined } from "@ant-design/icons";
+import PrimeReact from "primereact/api";
 
 type Props = {
   menuItem: any;
@@ -16,6 +17,7 @@ type menuType = {
 
 const SideNavBar = (props: Props) => {
   const sideNavMenu = props.menuItem;
+  PrimeReact.ripple = true;
 
   return (
     <>
@@ -33,16 +35,19 @@ const SideNavBar = (props: Props) => {
                   to={menu.navLink}
                   className={({ isActive }) =>
                     isActive
-                      ? style["active-menu"] + " " + style["nav-item"]
-                      : style["nav-item"]
+                      ? style["active-menu"] +
+                        " " +
+                        style["nav-item"] +
+                        " " +
+                        "p-ripple"
+                      : style["nav-item"] + " " + "p-ripple"
                   }
                 >
                   <span className="material-symbols-rounded fw-light">
                     {menu.icon}
                   </span>
                   <h6>{menu.name}</h6>
-                  <RightOutlined  className={style["right-arrow-icon"] } />
-                  
+                  <RightOutlined className={style["right-arrow-icon"]} />
                 </NavLink>
               );
             })}

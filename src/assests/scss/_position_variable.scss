@@ -1,0 +1,28 @@
+@for $top-position from 0 through 100 {
+    $class-name: top-#{$top-position};
+  
+    .#{$class-name} {
+      top: calc(($top-position) / 16) +em;
+    }
+}
+@for $left-position from 0 through 100 {
+    $class-name: left-#{$left-position};
+  
+    .#{$class-name} {
+      left: calc(($left-position) / 16) +em;
+    }
+}
+@for $right-position from 0 through 100 {
+    $class-name: right-#{$right-position};
+  
+    .#{$class-name} {
+      right: calc(($right-position) / 16) +em;
+    }
+}
+@for $bottom-position from 0 through 100 {
+    $class-name: bottom-#{$bottom-position};
+  
+    .#{$class-name} {
+      bottom: calc(($bottom-position) / 16) +em;
+    }
+}

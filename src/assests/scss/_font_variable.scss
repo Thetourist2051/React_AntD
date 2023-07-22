@@ -1,0 +1,22 @@
+// $font-sizes-range:( 8, 9, 50 );
+
+@for $font-size from 8 through 50 {
+  $class-name: f-#{$font-size};
+
+  .#{$class-name} {
+    font-size: ($font-size)/16 +em;
+  }
+}
+
+$font-weight-range: (300, 400, 500,600,700,800,900);
+
+@each $font-weight in $font-weight-range {
+  $class-name: fw-#{$font-weight};
+
+  .#{$class-name} {
+    font-weight: $font-weight;
+  }
+  
+}
+
+
