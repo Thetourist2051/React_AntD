@@ -1,7 +1,7 @@
 .side-nav-container {
   width: 100%;
   height: 100%;
-  background-color: var(--primary-700);
+  background-color: var(--primary-900);
 }
 .brand-logo {
   display: flex;
@@ -43,7 +43,7 @@
 
 .logout-section {
   height: 48px;
-  background-color: var(--primary-600);
+  background-color: var(--primary-800);
 }
 .nav-item {
   text-decoration: none;
@@ -70,7 +70,7 @@
   }
 
   &.active-menu {
-    background-color: var(--primary-600);
+    background-color: var(--primary-800);
     .right-arrow-icon {
       opacity: 1;
       transform: translateX(85px);

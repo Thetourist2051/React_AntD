@@ -84,7 +84,7 @@ const TopNavBar = (props: Props) => {
         ref={menuRight}
         id="popup_menu_right"
         popupAlignment="right"
-        className="pullDown"
+        className="pullDown header-menu-class"
       />
     </>
   );

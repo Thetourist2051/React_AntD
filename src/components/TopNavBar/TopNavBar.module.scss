@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: var(--primary-600);
+    background-color: var(--primary-800);
 }
 .nav-page-menu-name{
     padding: 0 0rem;
@@ -39,4 +39,7 @@
         font-weight: 200;
         cursor: pointer;
     }
+}
+.header-menu-class{
+    padding: 0;
 }

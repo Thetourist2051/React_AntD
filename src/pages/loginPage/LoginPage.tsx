@@ -24,11 +24,10 @@ const LoginPage = () => {
   const submitLoginForm = (values: any) => {
     console.log("form Values", values);
     localStorage.setItem("login_token", values.username);
-          navigate(RouteConstants.Dashboard);
-
+  
     const options = {
       method: 'GET',
-      url: 'http://localhost:3001/login',
+      url: 'http://localhost:3000/login',
       params: values ,
       headers: {
           'content-type': 'application/json',
@@ -44,7 +43,15 @@ const LoginPage = () => {
     // }
 
     axios.request(options).then((response:any)=>{
-     console.log('response',response);
+      if(response?.status === 200 )
+      {
+        navigate(RouteConstants.Dashboard);
+        console.log('login response',response);
+        message.success("Login Successful");
+      }
+      else{
+        message.error("Authentication Error!");
+      }
     })
   };
 
@@ -60,7 +67,7 @@ const LoginPage = () => {
     validationSchema: loginFromValidations,
   });
 
-  console.log("formikForm", formikForm);
+  // console.log("formikForm", formikForm);
 
   return (
     <>
