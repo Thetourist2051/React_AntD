@@ -42,17 +42,19 @@ const LoginPage = () => {
     //   message.error("Login Error");
     // }
 
-    axios.request(options).then((response:any)=>{
-      if(response?.status === 200 )
-      {
-        navigate(RouteConstants.Dashboard);
-        console.log('login response',response);
-        message.success("Login Successful");
-      }
-      else{
-        message.error("Authentication Error!");
-      }
-    })
+    navigate(RouteConstants.Dashboard);
+
+    // axios.request(options).then((response:any)=>{
+    //   if(response?.status === 200 )
+    //   {
+    //     navigate(RouteConstants.Dashboard);
+    //     console.log('login response',response);
+    //     message.success("Login Successful");
+    //   }
+    //   else{
+    //     message.error("Authentication Error!");
+    //   }
+    // })
   };
 
 

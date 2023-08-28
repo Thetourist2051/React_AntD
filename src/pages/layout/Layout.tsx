@@ -10,7 +10,6 @@ const Layout = () => {
 
   return (
     <>
-      layoutPage
       <button onClick={() => navigate(RouteConstants.Dashboard)}>
         Dashboard
       </button>

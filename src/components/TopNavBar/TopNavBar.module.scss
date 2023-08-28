@@ -43,3 +43,20 @@
 .header-menu-class{
     padding: 0;
 }
+.icon-class{
+    color: var(--primary-200);
+    font-size: 6rem!important;
+}
+.select-img-section{
+    border: 1px dashed var(--primary-700);
+}
+.preview-img{
+    height: 220px;
+    width: 220px;
+}
+.user-img{
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+}
