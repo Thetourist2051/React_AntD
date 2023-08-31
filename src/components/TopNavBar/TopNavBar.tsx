@@ -21,14 +21,17 @@ const TopNavBar = (props: Props) => {
   const handleFileChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files && event.target.files[0];
     setSelectedFile(file);
+    console.log('file2', file);
+    
     if (file) {
       const imageUrl = URL.createObjectURL(file);
       setPreviewUrl(imageUrl);
-      const fileString = JSON.stringify(file);
-      localStorage.setItem('profile-photo', fileString);
-      console.log('file', fileString)
+      localStorage.setItem('profile-photo', imageUrl);
+      console.log('file', imageUrl)
     }
   };
+
+  
   const handleImageClick = () => {
     if (fileInputRef.current) {
       fileInputRef.current.click();

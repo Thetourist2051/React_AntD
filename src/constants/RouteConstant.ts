@@ -7,4 +7,5 @@ export const RouteConstants = {
     DefaultPath:'/',
     Dashboard:'/dashboard',
     UserPage:'/user-page',
+    ExploreTopics:'/explore-topics'
 }

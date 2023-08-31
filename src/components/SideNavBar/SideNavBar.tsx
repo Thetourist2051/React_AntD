@@ -4,6 +4,7 @@ import { ImageUrl } from "../../constants/ImageUrl";
 import { NavLink, useNavigate } from "react-router-dom";
 import { RightOutlined } from "@ant-design/icons";
 import PrimeReact from "primereact/api";
+import BrandLogo from "../../assests/icons/BrandLogo";
 
 type Props = {
   menuItem: any;
@@ -23,8 +24,7 @@ const SideNavBar = (props: Props) => {
     <>
       <div className={style["side-nav-container"]}>
         <div className={style["brand-logo"] + " position-relative"}>
-          <img src={ImageUrl.BrandLogo} alt="" />
-          <h6 className="fw-light m-0 ps-2 text-white">Brand Name</h6>
+          <BrandLogo />
         </div>
         <div className={style["side-nav-scroll-section"]}>
           <nav>

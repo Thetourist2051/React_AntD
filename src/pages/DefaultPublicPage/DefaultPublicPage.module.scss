@@ -1,0 +1,110 @@
+.outline-page {
+  border: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  background-color: var(--surface-200);
+}
+
+.know-more-section {
+  padding: 4rem 0;
+  background-image: linear-gradient(rgba(4, 9, 30, 0.35), rgba(4, 9, 30, 0.7)),
+    url("../../assests/img/default-page/join-us-section.jpg");
+  background-size: cover;
+}
+.know-more-section {
+  h1 {
+    color: #f9bf4b;
+    text-transform: uppercase;
+  }
+  h4 {
+    color: white;
+    width: auto;
+    font-weight: 400;
+  }
+  p {
+    color: white;
+  }
+}
+.join-now-btn {
+  color: #f9bf4b;
+  text-decoration: none;
+  font-size: 16px;
+  background-color: #ffffff87;
+  border-radius: 60px;
+  display: inline-block;
+  z-index: 1;
+  transition: 0.3s;
+  text-align: center;
+  position: relative;
+  font-weight: 500;
+  outline: none;
+  border: none;
+  line-height: 1.2;
+  cursor: pointer;
+  width: auto;
+  padding: 16px 40px;
+}
+.join-now-btn span {
+  width: 0;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #f9bf4b;
+  z-index: -1;
+  transition: 0.5s;
+  border-radius: 60px;
+}
+.join-now-btn:hover {
+  font-weight: 500;
+  color: #fff;
+  box-shadow: 0 3px 6px #f3c770c9;
+}
+
+.join-now-btn:hover span {
+  width: 100%;
+  border: 1px solid #f9bf4b;
+}
+.explore-section {
+  background-color: var(--surface-100);
+  h2 {
+    font-size: 25px;
+    color: var(--primary-800);
+  }
+}
+.ml-topic-section {
+  background-color: var(--surface-200);
+  h3 {
+    text-transform: capitalize;
+  }
+  h6 {
+    font-size: 16px;
+  }
+
+  .topic-section {
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      li.tag {
+        display: inline-block;
+        padding: 0.5rem 1rem;
+        border-radius: 20px;
+        line-height: 1;
+        margin: 0 0.5rem 0.5rem 0;
+        border: 1px solid var(--primary-400);
+        cursor: pointer;
+        transition: 0.5s background;
+      }
+      li.tag:hover{
+        background-color: #f9bf4b;
+        color: white;
+        transition: 0.5s background;
+        border: 1px solid #f9bf4b;
+      }
+    }
+  }
+}
+

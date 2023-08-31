@@ -29,6 +29,9 @@ const RouterConfig = () => {
   );
 
   const LayoutLazyComponent = React.lazy(() => import("../layout/Layout"));
+  const ExploreTopicsPageLazyComponents = React.lazy(
+    () => import("../ExploreTopicsPage/ExploreTopicsPage")
+  );
 
   return (
     <BrowserRouter>
@@ -61,6 +64,15 @@ const RouterConfig = () => {
         />
 
         <Route
+          path={RouteConstants.ExploreTopics}
+          element={
+            <React.Suspense fallback={<>Loading</>}>
+              <ExploreTopicsPageLazyComponents />
+            </React.Suspense>
+          }
+        />
+
+        <Route
           path={RouteConstants.DefaultPath}
           element={
             <React.Suspense fallback={<>Loading</>}>
@@ -77,7 +89,7 @@ const RouterConfig = () => {
             </React.Suspense>
           }
         />
-        
+
         <Route element={<ProtectedRoute />}>
           <Route
             path={RouteConstants.Dashboard}
@@ -104,7 +116,6 @@ const RouterConfig = () => {
             }
           ></Route>
         </Route>
-        
       </Routes>
     </BrowserRouter>
   );

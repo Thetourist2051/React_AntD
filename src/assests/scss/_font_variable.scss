@@ -1,6 +1,7 @@
 // $font-sizes-range:( 8, 9, 50 );
+// terminal-command -> sass filename
 
-@for $font-size from 8 through 50 {
+@for $font-size from 8 through 70 {
   $class-name: f-#{$font-size};
 
   .#{$class-name} {
