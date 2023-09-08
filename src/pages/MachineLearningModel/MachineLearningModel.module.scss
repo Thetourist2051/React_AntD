@@ -1,0 +1,72 @@
+.ml-intro{
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)), url('../../assests/img/ml-models/Machine-Learning-Models-1.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #d5c7c7;
+  h5{
+    color: var(--primary-800);
+  }
+    h6{
+      color: var(--primary-700);
+    }
+    
+}
+.ml-work-flow{
+    text-align: left;
+    h5{
+      color: var(--primary-800);
+    }
+      h6{
+        color: var(--primary-700);
+      }
+  }
+  
+  .ml-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .shape {
+    width: calc((100% - 100px)/2);
+    height: 115px;
+    max-width: 115px;
+    background-color: #3498db;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+      .flow-name{
+        font-size: 14px;
+        font-weight: 500;
+        word-break: break-word;
+        text-align: center;
+        padding: 0px 5px;
+        line-height: 1.3;
+      }
+      &:hover{
+        background-color: #3886df;
+        transform: scale(1.1);
+      }
+  }
+  
+  .arrow {
+    margin: 0 10px;
+    font-size: 24px;
+    color: #3498db;
+  }
+
+
+.ml-model-classification{
+  h5{
+    color: var(--primary-700);
+  }
+    h6{
+      color: var(--primary-600);
+    }
+}

@@ -26,17 +26,18 @@ body {
 }
 
 .tab-section {
+	height: 45px;
   ul {
     margin: 0;
     padding: 0;
     list-style: none;
-	border-bottom: 3px solid var(--primary-100);
+	border-bottom: 2px solid var(--primary-100);
     li.tab {
       display: inline-block;
 	  font-size: 16px;
 	  font-weight: 500;
 	  padding: 0.5rem 1.25rem;
-	  border-bottom: 2px solid transparent;
+	//   border-bottom: 2px solid transparent;
 	  cursor: pointer;
 	  position: relative;
     }
@@ -50,7 +51,7 @@ body {
 		width: 100%;
 		background-color: var(--primary-700);
 		position: absolute;
-		bottom: -3px;
+		bottom: -2px;
 		left: 0;
 		right: 0;
 		margin: auto;

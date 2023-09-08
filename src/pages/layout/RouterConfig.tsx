@@ -29,8 +29,20 @@ const RouterConfig = () => {
   );
 
   const LayoutLazyComponent = React.lazy(() => import("../layout/Layout"));
+
   const ExploreTopicsPageLazyComponents = React.lazy(
     () => import("../ExploreTopicsPage/ExploreTopicsPage")
+  );
+
+  const MachineLearningModelPageLazyComponents = React.lazy(
+    () => import("../MachineLearningModel/MachineLearningModel")
+  );
+
+  const KNNAlgorithmsPageLazyComponents = React.lazy(
+    () =>
+      import(
+        "../MachineLearningModel/SupervisedMLModels/KNNAlgorithms/KNNAlgorithms"
+      )
   );
 
   return (
@@ -71,6 +83,26 @@ const RouterConfig = () => {
             </React.Suspense>
           }
         />
+
+        <Route
+          path={`${RouteConstants.KNN}`}
+          element={
+            <React.Suspense fallback={<>Loading</>}>
+              <KNNAlgorithmsPageLazyComponents />
+            </React.Suspense>
+          }
+        />
+
+        <Route
+          path={RouteConstants.MachineLearningModels}
+          element={
+            <React.Suspense fallback={<>Loading</>}>
+              <MachineLearningModelPageLazyComponents />
+            </React.Suspense>
+          }
+        />
+
+
 
         <Route
           path={RouteConstants.DefaultPath}

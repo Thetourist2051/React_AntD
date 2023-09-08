@@ -7,18 +7,18 @@ import PrimeReact from "primereact/api";
 import { Sidebar } from "primereact/sidebar";
 
 function App() {
-  const [selectedTheme, setSelectedTheme] = useState("bootstrap4-light-blue");
+  const [selectedTheme, setSelectedTheme] = useState("md-light-indigo");
   const [visiblePanel, setVisiblePanel] = useState<boolean>(false);
   PrimeReact.ripple = true;
 
   return (
     <>
       <div className="app position-relative">
-        <link
+        {/* <link
           rel="stylesheet"
           type="text/css"
           href={`${window.origin}/themes/${selectedTheme}/theme.css`}
-        />
+        /> */}
 
         <ErrorBoundary>
           <RouterConfig />

@@ -8,23 +8,63 @@
 
 
 .app{
-    font-family: 'Inter', sans-serif!important;
+    font-family       : 'Inter', sans-serif!important;
 // font-family: 'Montserrat', sans-serif;
 // font-family: 'Raleway', sans-serif;
+color                 : var(--text-color);
 }
 .p-component,.p-paginator-page, .p-dropdown-label{
-    font-family: 'Inter', sans-serif!important;
+    font-family       : 'Inter', sans-serif!important;
 }
 .menuPanel{
-    height: 40px;
-    width: 55px;
-    background: var(--primary-500);
+    height            : 40px;
+    width             : 55px;
+    background        : var(--primary-500);
 }
 .perfect-center{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    display           : flex;
+    justify-content   : center;
+    align-items       : center;
 }
 .cursor-pointer{
-    cursor: pointer;
+    cursor            : pointer;
+}
+.bold-span{
+    font-weight       : 500;
+    color             : var(--primary-600);
+}
+.highlight-span{
+    color             : var(--primary-600);
+}
+.bold-span{
+    font-weight       : 500;
+    color             : var(--primary-600);
+}
+.section{
+    background-color  : var(--surface-100);
+}
+.alt-section{
+    background-color  : var(--surface-200);
+}
+.clickable-text{
+    color             : var(--primary-600);
+    text-decoration   : underline;
+    cursor            : pointer;
+}
+.bs-body-color{
+    color             : var(--bs-body-color);
+}
+img{
+    max-width         : 100%;
+}
+.ant-switch-inner-checked{
+    line-height       : 20px!important;
+}
+.toggle-span {
+    font-size         : 12px;
+    font-family       : Inter, sans-serif;
+    padding           : 0px 2px;
+}
+p{
+    font-size: 14px;
 }

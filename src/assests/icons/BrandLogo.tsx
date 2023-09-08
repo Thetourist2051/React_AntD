@@ -8,18 +8,18 @@ interface BrandLogoProps {
 }
 
 const BrandLogo = ({ size }: BrandLogoProps) => {
-  PrimeReact.ripple = true;
+  // PrimeReact.ripple = true;
 
   return (
     <>
-      <div className={style["brand-logo"]}>
+      <div className={style["brand-logo"] + " " + "p-ripple"}>
         <div className={"px-2 f-22 fw-300"}>
           {size === "lg" ? <>ML Blog</> : <>ML_B</>}
         </div>
         <div className={"pe-2 f-22 fw-600"}>
           {size === "lg" ? <>Lane</> : <>L</>}
         </div>
-       <Ripple />
+        <Ripple />
       </div>
     </>
   );

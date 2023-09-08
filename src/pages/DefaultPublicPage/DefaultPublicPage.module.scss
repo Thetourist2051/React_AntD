@@ -8,7 +8,7 @@
 }
 
 .know-more-section {
-  padding: 4rem 0;
+  padding: 2rem 0;
   background-image: linear-gradient(rgba(4, 9, 30, 0.35), rgba(4, 9, 30, 0.7)),
     url("../../assests/img/default-page/join-us-section.jpg");
   background-size: cover;
@@ -78,6 +78,7 @@
   background-color: var(--surface-200);
   h3 {
     text-transform: capitalize;
+    color: var(--primary-800);
   }
   h6 {
     font-size: 16px;
@@ -107,4 +108,65 @@
     }
   }
 }
+
+.ml-model-section {
+    background-color: var(--surface-100);
+    h2 {
+      font-size: 25px;
+      color: var(--primary-800);
+    }
+    img{
+        max-width: 100%;
+    }
+    .dive-in-btn {
+        position: relative;
+        font-size: 14px;
+        height: 3em;
+        padding: 0 3em;
+        border: none;
+        background-color: #f0b847;
+        color: #fff;
+        text-transform: capitalize;
+        overflow: hidden;
+        border-radius: 20px
+       }
+       
+       .dive-in-btn::before {
+        content: '';
+        display: block;
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        left: 0;
+        height: 0px;
+        width: 100%;
+        background: linear-gradient(90deg, rgb(249 191 75) 20%, rgb(239 161 6) 100%);        transition: 0.2s;
+       }
+       
+       .dive-in-btn .label {
+        position: relative;
+       }
+       
+       .dive-in-btn .icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 3em;
+        width: 3em;
+        position: absolute;
+        top: 3em;
+        right: 0;
+        opacity: 0;
+        transition: 0.4s;
+       }
+       
+       .dive-in-btn:hover::before {
+        height: 100%;
+       }
+       
+       .dive-in-btn:hover .icon {
+        top: 0;
+        opacity: 1;
+       }
+  }
 
