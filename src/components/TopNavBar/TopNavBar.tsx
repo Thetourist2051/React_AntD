@@ -8,7 +8,6 @@ type Props = {};
 const TopNavBar = (props: Props) => {
   const location = useLocation()
   const [pageName, setPagename] = useState<string>('Dashbaord')
-  console.log('location from top nav', location);
 
   useEffect(()=>{
    if(location.pathname === `/${RouteConstants.Dashboard}`){

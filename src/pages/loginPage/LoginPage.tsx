@@ -21,9 +21,7 @@ const LoginPage = () => {
   };
 
   const submitLoginForm = (values: any) => {
-    console.log("form Values", values);
     if (values.username === loginValues.username) {
-      console.log("form Submitted");
       localStorage.setItem("refresh_token", values.username);
       navigate(RouteConstants.Dashboard);
       message.success("Login Successful");
@@ -44,7 +42,6 @@ const LoginPage = () => {
     validationSchema: loginFromValidations,
   });
 
-  console.log("formikForm", formikForm);
 
   return (
     <>
