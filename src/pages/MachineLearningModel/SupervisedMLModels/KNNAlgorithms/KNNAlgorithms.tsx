@@ -2,8 +2,35 @@ import React from "react";
 import PageHeader from "../../../../components/PageHeader/PageHeader";
 import classes from "./KNNAlgorithms.module.scss";
 import { ImageUrl } from "../../../../constants/ImageUrl";
+import CodeSnippet from "../../../../components/CodeSnippet/CodeSnippet";
 
 const kNNAlgorithms = () => {
+  const sampleCode = `import numpy as np
+  from sklearn.datasets import load_iris
+  from sklearn.model_selection import train_test_split
+  from sklearn.neighbors import KNeighborsClassifier
+  from sklearn.metrics import accuracy_score
+  
+  # Load the Iris dataset
+  iris = load_iris()
+  X = iris.data
+  y = iris.target
+  
+  # Split the data into training and testing sets
+  X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+  
+  # Create and train the KNN model
+  k = 3  # Number of neighbors to consider
+  knn = KNeighborsClassifier(n_neighbors=k)
+  knn.fit(X_train, y_train)
+  
+  # Predict on the test set
+  y_pred = knn.predict(X_test)
+  
+  # Calculate the accuracy of the model
+  accuracy = accuracy_score(y_test, y_pred)
+  print("Accuracy:", accuracy)
+  `
   return (
     <>
       <PageHeader />
@@ -134,18 +161,22 @@ const kNNAlgorithms = () => {
                     behavior:
                     <ul>
                       <li>
-                        <strong>Smaller k Values:</strong> A smaller "k" (e.g.,
-                        k=1 or k=3) results in a more sensitive model. It can
-                        capture fine-grained patterns in the data, which may
-                        lead to high variability in predictions and potential
-                        overfitting to noise.
+                        <strong className="highlight-span">
+                          Smaller k Values:
+                        </strong>{" "}
+                        A smaller "k" (e.g., k=1 or k=3) results in a more
+                        sensitive model. It can capture fine-grained patterns in
+                        the data, which may lead to high variability in
+                        predictions and potential overfitting to noise.
                       </li>
                       <li>
-                        <strong>Larger k Values:</strong> Conversely, larger "k"
-                        values (e.g., k=10 or k=20) yield smoother and more
-                        stable predictions. They tend to provide a more robust
-                        and generalized model by averaging the influence of more
-                        data points.
+                        <strong className="highlight-span">
+                          Larger k Values:
+                        </strong>{" "}
+                        Conversely, larger "k" values (e.g., k=10 or k=20) yield
+                        smoother and more stable predictions. They tend to
+                        provide a more robust and generalized model by averaging
+                        the influence of more data points.
                       </li>
                     </ul>
                   </p>
@@ -162,6 +193,125 @@ const kNNAlgorithms = () => {
                     different "k" values on k-NN's performance and provide
                     guidance on how to choose the most suitable "k" for your
                     machine learning tasks.
+                  </p>
+                  <CodeSnippet heading="k-value" code={sampleCode} />
+                </li>
+                <li>
+                  <h6>Distance :</h6>
+                  <p>
+                    The choice of distance metric is another crucial
+                    hyperparameter in the k-Nearest Neighbors (k-NN) algorithm.
+                    It determines how the algorithm calculates the distance
+                    between data points when identifying the nearest neighbors.
+                    Different distance metrics can significantly impact the
+                    algorithm's performance and its ability to capture
+                    underlying patterns in the data.
+                  </p>
+                  <p>
+                    Here are some common distance metrics used in k-NN along
+                    with their formulas and applications:
+                  </p>
+                  <ul>
+                    <li>
+                      <strong className="highlight-span">
+                        Euclidean Distance:
+                      </strong>{" "}
+                      (<em>d</em>)<sup>2</sup> = Σ(<em>x</em>
+                      <sub>i</sub> - <em>y</em>
+                      <sub>i</sub>)<sup>2</sup>
+                      <br />
+                      <p>
+                        Formula: Calculate the straight-line distance between
+                        two points in Euclidean space.
+                      </p>
+                      <p>Application: Suitable for continuous numeric data.</p>
+                    </li>
+                    <li>
+                      <strong className="highlight-span">
+                        Manhattan Distance:
+                      </strong>{" "}
+                      <em>d</em> = Σ|
+                      <em>x</em>
+                      <sub>i</sub> - <em>y</em>
+                      <sub>i</sub>|
+                      <br />
+                      <p>
+                        Formula: Measure the sum of absolute differences between
+                        corresponding coordinates of two points.
+                      </p>
+                      <p>
+                        Application: Useful for data with a grid-like structure
+                        or features with different units of measurement.
+                      </p>
+                    </li>
+                    <li>
+                      <strong className="highlight-span">
+                        Minkowski Distance:
+                      </strong>{" "}
+                      <em>d</em> = (Σ|
+                      <em>x</em>
+                      <sub>i</sub> - <em>y</em>
+                      <sub>i</sub>|
+                      <sup>
+                        <em>p</em>
+                      </sup>
+                      )
+                      <sup>
+                        1/<em>p</em>
+                      </sup>
+                      <br />
+                      <p>
+                        Formula: Generalization of both Euclidean and Manhattan
+                        distances, controlled by the parameter 'p'. When 'p' is
+                        1, it's Manhattan distance; when 'p' is 2, it's
+                        Euclidean distance.
+                      </p>
+                      <p>
+                        Application: Offers flexibility to adjust the distance
+                        calculation based on 'p' value.
+                      </p>
+                    </li>
+                    <li>
+                      <strong className="highlight-span">
+                        Cosine Similarity:
+                      </strong>{" "}
+                      <em>cos(θ)</em> = (<em>X</em> ⋅ <em>Y</em>) / (∥<em>X</em>
+                      ∥ ∥<em>Y</em>∥)
+                      <br />
+                      <p>
+                        Formula: Quantify the cosine of the angle between two
+                        vectors.
+                      </p>
+                      <p>
+                        Application: Useful for text or high-dimensional data
+                        where the magnitude of vectors matters less than their
+                        direction.
+                      </p>
+                    </li>
+                    <li>
+                      <strong className="highlight-span">
+                        Hamming Distance:
+                      </strong>{" "}
+                      <em>d</em> = Σ(
+                      <em>x</em>
+                      <sub>i</sub> ≠ <em>y</em>
+                      <sub>i</sub>)
+                      <br />
+                      <p>
+                        Formula: Calculate the number of positions at which two
+                        strings of equal length are different.
+                      </p>
+                      <p>
+                        Application: Commonly used in k-NN for categorical
+                        feature-based classifications.
+                      </p>
+                    </li>
+                  </ul>
+                  <p>
+                    Choosing the right distance metric depends on your data and
+                    problem domain. Experimentation and domain knowledge often
+                    guide the selection of the most appropriate distance metric
+                    for your k-NN model.
                   </p>
                 </li>
               </ol>

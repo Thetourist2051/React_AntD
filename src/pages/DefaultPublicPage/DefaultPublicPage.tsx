@@ -6,6 +6,7 @@ import PageHeader from "../../components/PageHeader/PageHeader";
 import { TagArray } from "../../assests/data/TagArray";
 import { TabContainerArray } from "../../assests/data/TabContainerArray";
 import { ImageUrl } from "../../constants/ImageUrl";
+import PopupComponent from "../../components/PopupComponent/PopupComponent";
 
 const DefaultPublicPage = () => {
   const navigate = useNavigate();
@@ -14,11 +15,15 @@ const DefaultPublicPage = () => {
   let statsTags = TagArray.statsTags;
   let mlTags = TagArray.mlTags;
   let tagArray = [...statsTags, ...mlTags];
+  const [visible, setVisible] = useState<boolean>(false);
+
 
   return (
     <>
       <div className={classes["outline-page"]}>
         <PageHeader />
+        <div className={classes["scrollable-section"]}>
+
         <div
           className={
             classes["know-more-section"] + " " + "py-lg-5 py-md-4 py-5"
@@ -48,9 +53,7 @@ const DefaultPublicPage = () => {
           </div>
         </div>
         <div
-          className={
-            classes["explore-section"] + " " + "py-lg-5 py-md-4 py-5"
-          }
+          className={classes["explore-section"] + " " + "py-lg-5 py-md-4 py-5"}
         >
           <div className="container px-lg-3 px-md-2 px-sm-0">
             <h2>Explore Ideas</h2>
@@ -87,9 +90,7 @@ const DefaultPublicPage = () => {
           </div>
         </div>
         <div
-          className={
-            classes["ml-topic-section"] + " " + "py-lg-5 py-md-4 py-5"
-          }
+          className={classes["ml-topic-section"] + " " + "py-lg-5 py-md-4 py-5"}
         >
           <div className="container px-lg-3 px-md-2 px-sm-0">
             <div className="row mx-0">
@@ -135,9 +136,7 @@ const DefaultPublicPage = () => {
             </div>
           </div>
         </div>
-        <div
-          className={classes["ml-model-section"] + " py-lg-5 py-md-4 py-5"}
-        >
+        <div className={classes["ml-model-section"] + " py-lg-5 py-md-4 py-5"}>
           <div className="container px-lg-3 px-md-2 px-sm-0">
             <div className="row mx-0">
               <div className="col-md-6">
@@ -153,7 +152,14 @@ const DefaultPublicPage = () => {
                   tutorials and practical examples. Master the art of
                   data-driven decision-making.
                 </p>
-                <button className={classes["dive-in-btn"]} onClick={()=>navigate(RouteConstants.MachineLearningModels, {state:null})}>
+                <button
+                  className={classes["dive-in-btn"]}
+                  onClick={() =>
+                    navigate(RouteConstants.MachineLearningModels, {
+                      state: null,
+                    })
+                  }
+                >
                   <span className={classes["label"]}>Dive In</span>
                   <span className={classes["icon"]}>
                     <svg
@@ -174,7 +180,51 @@ const DefaultPublicPage = () => {
             </div>
           </div>
         </div>
+                  
+        <div className="py-lg-5">
+          <button className="btn btn-primary" onClick={() => setVisible(true)}>
+            Open popup
+          </button>
+        </div>
+        </div>
       </div>
+      <PopupComponent
+            popupTitle="Common Popup"
+            size={'md'}
+            visible={visible}
+            setVisible={setVisible}
+          >
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis,
+            debitis.
+            <>
+              <div className="row">
+                <div className="col-md-6">
+                  <div className={classes["ctm-class"] + " f-12"}>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Velit, esse.
+                  </div>
+                  Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quia
+                  corporis enim nihil! Numquam ducimus laboriosam, reprehenderit
+                  tenetur dolor reiciendis voluptate deleniti accusamus vero
+                  aperiam nobis? Ipsum totam quam libero harum eligendi esse
+                  beatae officiis at sapiente hic blanditiis distinctio
+                  consequuntur labore minima quibusdam atque, nisi error enim
+                  molestiae optio adipisci fuga magni tempore suscipit.
+                  Dignissimos, ea ipsa modi autem provident facere unde
+                  voluptate aspernatur repudiandae fugit harum, voluptates
+                  maiores pariatur quia asperiores magnam explicabo vitae?
+                  Voluptate, modi! Ipsam sequi sed sapiente culpa neque sunt,
+                  reprehenderit corporis cum accusamus recusandae minima quia,
+                  nam perferendis temporibus iusto veniam voluptatem optio eius
+                  quasi.
+                </div>
+                <div className="col-6">
+                <button className="btn btn-danger">Check Btn</button>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, distinctio officiis corporis harum molestias perferendis consectetur sit assumenda magni alias, autem sed unde suscipit commodi architecto. Sapiente tempore, amet quas laboriosam atque exercitationem harum deserunt nemo pariatur ipsum nihil iste neque perferendis earum eligendi autem nobis voluptate, ipsa aspernatur voluptatibus tenetur doloribus! Repellendus accusantium in, porro libero, alias iste assumenda eaque, laborum officia unde blanditiis explicabo molestias? Sit nisi, recusandae dolores ullam obcaecati autem ipsa similique sunt iste, voluptates corporis, fugiat molestias. Quam distinctio ab doloribus sint nobis voluptatibus optio temporibus mollitia voluptatem quasi ea similique, expedita culpa excepturi minus? Tempora rem fugit harum quidem aut eum. Voluptatibus consectetur excepturi corporis nulla. Omnis iusto incidunt qui at commodi dignissimos inventore ex eveniet consectetur voluptatibus dolore quis ipsam quidem consequuntur fugiat molestias, cumque modi ut facere ipsum id labore repellendus accusantium eos? Debitis quia, aliquam itaque ex iusto magni optio omnis non impedit nobis eius voluptatibus odit veritatis incidunt saepe ipsum fugit adipisci molestiae ullam quos totam laboriosam eaque voluptas ratione. Quos perspiciatis excepturi reprehenderit, nobis ducimus temporibus corrupti fugit nemo eveniet illo reiciendis quod nulla numquam nihil et accusamus facilis error omnis totam? Voluptatem laboriosam doloremque quidem aliquid, impedit totam.
+                </div>
+              </div>
+            </>
+          </PopupComponent>
     </>
   );
 };

@@ -1,0 +1,31 @@
+.code-snippet{
+    border-radius: 0.5em;
+    overflow: hidden;
+    margin: 0.5rem 0 1rem;
+    .snippet-header{
+        background-color: #343541;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.75rem 1rem;
+        border-radius: 0.5rem 0.5rem 0 0;
+        i{
+            font-size: 14px;
+            color: white;
+            cursor: pointer;
+        }
+        h6{
+            color: white;
+            font-size: 12px;
+            font-weight: 400;
+            margin: 0;
+        }
+    }
+    .snippet-content{
+        min-height: 200px;
+        background-color: black;
+        padding: 0.5rem 1rem;
+        color: white;
+        font-size: 12px;
+    }
+}

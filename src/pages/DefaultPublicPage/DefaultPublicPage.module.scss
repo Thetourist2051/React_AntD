@@ -5,6 +5,12 @@
   padding: 0;
   width: 100%;
   background-color: var(--surface-200);
+  height: 100vh;
+  overflow: hidden;
+}
+.scrollable-section{
+  height: calc(100vh - 80px);
+  overflow: auto;
 }
 
 .know-more-section {
