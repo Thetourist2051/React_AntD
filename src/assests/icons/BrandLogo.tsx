@@ -13,12 +13,25 @@ const BrandLogo = ({ size }: BrandLogoProps) => {
   return (
     <>
       <div className={style["brand-logo"] + " " + "p-ripple"}>
-        <div className={"px-2 f-22 fw-300"}>
-          {size === "lg" ? <>ML Blog</> : <>ML_B</>}
-        </div>
-        <div className={"pe-2 f-22 fw-600"}>
-          {size === "lg" ? <>Lane</> : <>L</>}
-        </div>
+        {size === "lg" ? (
+          <>
+            <div className={"px-2 f-22 fw-300"}>
+              <>ML Blog</>
+            </div>
+            <div className={"pe-2 f-22 fw-600"}>
+              <>Lane</>
+            </div>
+          </>
+        ) : (
+          <>
+            <div className={"px-2 f-16 fw-300"}>
+              <>ML</>
+            </div>
+            <div className={"pe-2 f-16 fw-600"}>
+              <>Lane</>
+            </div>
+          </>
+        )}
         <Ripple />
       </div>
     </>

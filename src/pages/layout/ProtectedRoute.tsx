@@ -18,6 +18,11 @@ const ProtectedRoute = () => {
       icon: "group",
       navLink: RouteConstants.UserPage,
     },
+    {
+      name: "Post Page",
+      icon: "book",
+      navLink: RouteConstants.PostPage,
+    },
   ];
 
   const loginToken = localStorage.getItem("login_token")
@@ -29,7 +34,7 @@ const ProtectedRoute = () => {
       } else {
         console.log("Credential Found :)")
       }
-    }, 200000)
+    }, 2000)
 
     const verifyUser = () => {
       navigate(RouteConstants.Login);
@@ -41,13 +46,18 @@ const ProtectedRoute = () => {
   let auth = { token: loginToken };
   return auth.token ? (
     <>
+    <link
+        rel="stylesheet"
+        type="text/css"
+        href={`${window.origin}/themes/md-light-indigo/theme.css`}
+      />
       <div className={style["render-layout"]}>
         <div className={style["sidenav-section"]}>
           <SideNavBar menuItem={menuItem} />
         </div>
         <div className={style["outlet-section"]}>
           <TopNavBar />
-          <div className={style["scrollable-outlet-section"]}>
+          <div className={style["scrollable-outlet-section"]+ ' '+ 'px-lg-3 py-lg-3 p-2'}>
             <Outlet />
           </div>
         </div>

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import CustomTable from "../../../components/CustomTable/CustomTable";
 import Title from "antd/es/typography/Title";
 import { Tooltip } from "antd";
@@ -48,6 +48,9 @@ const UserPage = (props: any) => {
     );
   };
 
+  const [value, setValue] = useState<number>(10)
+
+
   const columns = [
     {
       title: "Action",
@@ -61,7 +64,7 @@ const UserPage = (props: any) => {
       alignItems:'center',
     },
     {
-      title: "Name",
+      title: `Name${value}`,
       dataIndex: "name",
       key: "name",
       width: 160,

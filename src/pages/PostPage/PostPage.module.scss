@@ -1,0 +1,17 @@
+.post-page-outer{
+    // border: 1px solid var(--blue-900);
+}
+.spitter-pannel{
+    height: calc(100vh - 125px);
+}
+.nav-item{
+    background-color: var(--blue-600);
+    color: white;
+}
+.active-nav-item{
+    background-color: var(--blue-700);
+}
+.form-content{
+    height: calc(100% - 80px);
+    overflow: auto;
+}

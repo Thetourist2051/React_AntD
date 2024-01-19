@@ -1,0 +1,32 @@
+.container-1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 6px 0px 5px 10px;
+}
+.container-1 h3 {
+    font-family: cursive;
+    margin-left: 10px;
+    font-size: 20px;
+}
+.container-1 img {
+    width: 40px;
+    height: 36px;
+    border-radius: 10px;
+}
+.card-class{
+    display: flex;
+    margin: 7px
+}
+.card-body{
+    width: 33%;
+    background-color: aliceblue;
+    border: 1px solid #c1ddf6;
+    color: black;
+    padding: 6px;
+    margin: 6px;
+    border-radius: 7px;
+}
+.card-body h3{
+    text-align: center;
+}

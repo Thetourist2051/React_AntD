@@ -1,4 +1,5 @@
 import React from "react";
+import { ImageUrl } from "../../../constants/ImageUrl";
 
 const DashboardPage = () => {
   return (
@@ -22,6 +23,9 @@ const DashboardPage = () => {
           trigger.
         </div>
       </div>
+      <div contentEditable='true' className="border border-primary p-2" >Lorem ipsum dolor sit amet consectetur adipisicing elit. Nisi, modi!</div>
+
+      <a href={'https://plus.unsplash.com/premium_photo-1664361480105-33afc4559c40?auto=format&fit=crop&q=80&w=1523&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'} target={"_blank"} download={'afridi.jpg'}>Download this image</a>
     </>
   );
 };

@@ -1,0 +1,15 @@
+.label-design {
+  color: black;
+  font-size: 15px;
+  font-weight: 600;
+}
+.error-msg {
+  color: red;
+  font-size: 12px;
+  font-weight: 600;
+  padding-left: 10px;
+  padding-top: 3px;
+}
+::ng-deep .form-group .p-dropdown .p-dropdown-label .p-placeholder{
+  color: red
+}

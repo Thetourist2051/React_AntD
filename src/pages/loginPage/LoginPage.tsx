@@ -7,7 +7,6 @@ import { useNavigate } from "react-router-dom";
 import { RouteConstants } from "../../constants/RouteConstant";
 import { message } from "antd";
 import "./LoginPage";
-import axios from "axios";
 
 const LoginPage = () => {
   const navigate = useNavigate();
@@ -16,52 +15,28 @@ const LoginPage = () => {
     password: "123",
   };
 
-  const initialFromValues = {
+  const initialFromValues= {
     username: "",
     password: "",
   };
   
   const submitLoginForm = (values: any) => {
-    console.log("form Values", values);
-    localStorage.setItem("login_token", values.username);
-  
-    const options = {
-      method: 'GET',
-      url: 'http://localhost:3000/login',
-      params: values ,
-      headers: {
-          'content-type': 'application/json',
-      },
-  };
-    // if (values.username === loginValues.username) {
-    //   console.log("form Submitted");
-    //   localStorage.setItem("login_token", values.username);
-    //   navigate(RouteConstants.Dashboard);
-    //   message.success("Login Successful");
-    // } else {
-    //   message.error("Login Error");
-    // }
-
+    if (values.username === loginValues.username) {
+      localStorage.setItem("refresh_token", values.username);
+      navigate(RouteConstants.Dashboard);
+      message.success("Login Successful");
+    } else {
+      message.error("Login Error");
+    }
     navigate(RouteConstants.Dashboard);
-
-    // axios.request(options).then((response:any)=>{
-    //   if(response?.status === 200 )
-    //   {
-    //     navigate(RouteConstants.Dashboard);
-    //     console.log('login response',response);
-    //     message.success("Login Successful");
-    //   }
-    //   else{
-    //     message.error("Authentication Error!");
-    //   }
-    // })
-  };
+  }
 
 
   const loginFromValidations = Yup.object({
     username: Yup.string().min(2, "Min len 3").required("Required!"),
     password: Yup.string().min(2, "Min len 3").required("Required!"),
   });
+
 
   const formikForm = useFormik({
     initialValues: initialFromValues,
@@ -80,7 +55,7 @@ const LoginPage = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita
             alias deserunt aspernatur? Recusandae, at optio!
           </p>
-          <form onSubmit={formikForm.submitForm}>
+          <form onSubmit={formikForm.handleSubmit}>
             <div className={classes["formItem"] + " position-relative"}>
               <h6 className={classes["formLabel"]}>Enter Username </h6>
               <Input
@@ -123,17 +98,32 @@ const LoginPage = () => {
               </span>
             </div>
             <div className="row mx-0 mt-3 justify-content-start">
+              <div className="col-md-6 pl-0 text-center">
               <Button
-                size={'large'}
+                size={"large"}
                 type="primary"
                 shape={"round"}
-                className="primary-btn"
+                className="primary-btn w-75"
                 onClick={formikForm.submitForm}
                 disabled={!formikForm.isValid}
-                color={'info'}
+                color={"info"}
               >
                 Submit
               </Button>
+              </div>
+              <div className="col-md-6 pl-0 text-center">
+              <Button
+                size={"large"}
+                type="primary"
+                shape={"round"}
+                className="success-btn w-75"
+                onClick={() => navigate(RouteConstants.ResigterPage)}
+                disabled={!formikForm.isValid}
+                color={"info"}
+              >
+                Resigter
+              </Button>
+              </div>
             </div>
           </form>
         </div>
@@ -143,3 +133,5 @@ const LoginPage = () => {
 };
 
 export default LoginPage;
+
+

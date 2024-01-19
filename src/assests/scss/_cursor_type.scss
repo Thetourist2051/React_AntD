@@ -1,0 +1,38 @@
+$cursor-types: (
+  default,
+  pointer,
+  help,
+  wait,
+  progress,
+  not-allowed,
+  crosshair,
+  text,
+  alias,
+  copy,
+  move,
+  no-drop,
+  col-resize,
+  row-resize,
+  n-resize,
+  e-resize,
+  s-resize,
+  w-resize,
+  ne-resize,
+  nw-resize,
+  se-resize,
+  sw-resize,
+  ew-resize,
+  ns-resize,
+  nesw-resize,
+  nwse-resize,
+  zoom-in,
+  zoom-out
+);
+
+@each $cursor-type in $cursor-types {
+  $class-name: cursor-#{$cursor-type};
+
+  .#{$class-name} {
+    cursor: $cursor-type;
+  }
+}

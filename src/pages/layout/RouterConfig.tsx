@@ -4,11 +4,11 @@ import { RouteConstants } from "../../constants/RouteConstant";
 import ProtectedRoute from "./ProtectedRoute";
 
 const RouterConfig = () => {
-  const LoginPageLazyComponent = React.lazy(
-    () => import("../loginPage/LoginPage")
-  );
   const ForgetPasswordLazyComponent = React.lazy(
     () => import("../forgetPassword/ForgetPassword")
+  );
+  const LoginPageLazyComponent = React.lazy(
+    () => import("../loginPage/LoginPage")
   );
   const RestPasswordLazyComponent = React.lazy(
     () => import("../resetPassword/ResetPassword")
@@ -24,8 +24,13 @@ const RouterConfig = () => {
   const DashboardLazyCompoent = React.lazy(
     () => import("../protectedComponent/dashboardPage/DashboardPage")
   );
+
   const UserPageLazyComponent = React.lazy(
     () => import("../protectedComponent/userPage/UserPage")
+  );
+
+  const PostPageLazyComponent = React.lazy(
+    () => import("../PostPage/PostPage")
   );
 
   const LayoutLazyComponent = React.lazy(() => import("../layout/Layout"));
@@ -43,6 +48,10 @@ const RouterConfig = () => {
       import(
         "../MachineLearningModel/SupervisedMLModels/KNNAlgorithms/KNNAlgorithms"
       )
+  );
+
+  const RegistrationLazyComponent = React.lazy(
+    () => import("../resigtraionPage/registrationForm/RegistrationForm")
   );
 
   return (
@@ -102,13 +111,20 @@ const RouterConfig = () => {
           }
         />
 
-
-
         <Route
           path={RouteConstants.DefaultPath}
           element={
             <React.Suspense fallback={<>Loading</>}>
               <DefaultPublicPageLazyComponent />
+            </React.Suspense>
+          }
+        />
+
+        <Route
+          path={RouteConstants.ResigterPage}
+          element={
+            <React.Suspense fallback={<>Loading</>}>
+              <RegistrationLazyComponent />
             </React.Suspense>
           }
         />
@@ -138,6 +154,14 @@ const RouterConfig = () => {
                 <UserPageLazyComponent />
               </React.Suspense>
             }
+          ></Route>
+          <Route
+          path={RouteConstants.PostPage}
+          element={
+            <React.Suspense fallback={<>Loading</>}>
+                <PostPageLazyComponent />
+              </React.Suspense>
+          }
           ></Route>
           <Route
             path={RouteConstants.Layout}

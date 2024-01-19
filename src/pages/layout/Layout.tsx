@@ -5,7 +5,6 @@ import { RouteConstants } from "../../constants/RouteConstant";
 const Layout = () => {
   const navigate = useNavigate();
   const location = useLocation();
-  console.log(location,'location');
   
 
   return (

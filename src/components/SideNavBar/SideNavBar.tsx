@@ -24,7 +24,7 @@ const SideNavBar = (props: Props) => {
     <>
       <div className={style["side-nav-container"]}>
         <div className={style["brand-logo"] + " position-relative"}>
-          <BrandLogo />
+          <BrandLogo size="lg" />
         </div>
         <div className={style["side-nav-scroll-section"]}>
           <nav>
