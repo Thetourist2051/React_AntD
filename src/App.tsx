@@ -14,25 +14,25 @@ function App() {
   return (
     <>
       <div className="app position-relative">
-        {/* <link
+        <link
           rel="stylesheet"
           type="text/css"
-          href={`${window.origin}/themes/${selectedTheme}/theme.css`}
-        /> */}
+          href={`${window.origin}/themes/md-light-indigo/theme.css`}
+        />
 
         <ErrorBoundary>
           <RouterConfig />
         </ErrorBoundary>
 
-        <div
+        {/* <div
           className="menuPanel position-fixed btn btn-secondary perfect-center top-50 end-0 p-ripple border-0"
           onClick={() => setVisiblePanel(true)}
         >
           <i className="pi pi-spin pi-cog f-12"></i>
           <Ripple />
-        </div>
+        </div> */}
       </div>
-      <Sidebar
+      {/* <Sidebar
         visible={visiblePanel}
         position="right"
         onHide={() => setVisiblePanel(false)}
@@ -186,7 +186,7 @@ function App() {
             </h6>
           </div>
         </div>
-      </Sidebar>
+      </Sidebar> */}
     </>
   );
 }
