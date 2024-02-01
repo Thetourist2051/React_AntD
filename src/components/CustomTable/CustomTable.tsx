@@ -29,6 +29,7 @@ type tableProps = {
   alignItems?: any;
   otherTableProps?: any;
   customColumnClassName?: string;
+  btnArray?:any
 };
 
 const CustomTable = ({
@@ -41,8 +42,9 @@ const CustomTable = ({
   alignItems,
   otherTableProps,
   customColumnClassName,
+  btnArray
 }: tableProps) => {
-  columnArray.forEach((column: any) => {
+    columnArray.forEach((column: any) => {
     column.width = (column && column.width) || 140;
     column.alignItems = (column && column.alignItems) || "left";
   });
@@ -143,6 +145,23 @@ const CustomTable = ({
                 className="header-button"
               />
             </Tooltip>
+            {btnArray
+          ? btnArray?.map((btn: any, index: any) => (
+            <Tooltip title={btn.tooltip ? btn.tooltip : 'Tooltip'}>
+              <Button
+                key={index}
+                type="button"
+                icon={btn.icon ? btn.icon : 'pi pi-plus'}
+                label={btn.label ? btn.label : 'label'}
+                onClick={btn.addFunction}
+                className="p-button-add table-upload-btn mx-2"
+                rounded={true}
+                size="small"
+              />
+            </Tooltip>
+            ))
+          : null}
+
           </div>
           <div className="table-serach w-auto pe-0">
             <div className="p-inputgroup">

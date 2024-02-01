@@ -1,10 +1,11 @@
-// @import '../node_modules/antd/dist/reset.css';
-// @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import '../node_modules/antd/dist/reset.css';
+@import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import '../src/assests/scss/_font_variable';
 @import '../src/assests/scss/_position_variable';
 @import "primereact/resources/primereact.min.css";
 @import 'primeicons/primeicons.css';
 @import './assests/scss/animation.scss';
+// @import 'primereact/resources/themes/md-light-indigo/theme.css'
 
 
 .app{

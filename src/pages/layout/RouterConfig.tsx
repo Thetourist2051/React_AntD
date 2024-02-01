@@ -163,14 +163,14 @@ const RouterConfig = () => {
               </React.Suspense>
           }
           ></Route>
-          <Route
+          {/* <Route
             path={RouteConstants.Layout}
             element={
               <React.Suspense fallback={<>Loading</>}>
                 <LayoutLazyComponent />
               </React.Suspense>
             }
-          ></Route>
+          ></Route> */}
         </Route>
       </Routes>
     </BrowserRouter>

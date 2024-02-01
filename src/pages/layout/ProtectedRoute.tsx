@@ -31,8 +31,11 @@ const ProtectedRoute = () => {
     let interval = setInterval(() => {
       if (!localStorage.getItem("login_token")) {
         verifyUser()
+        console.log('credentails not found');
+        
       } else {
         console.log("Credential Found :)")
+        navigate(RouteConstants.Dashboard)
       }
     }, 2000)
 
